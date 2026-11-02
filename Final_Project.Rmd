@@ -1,0 +1,48 @@
+---
+title: 'Final Project: R Markdown'
+author: "Madelyn Hill"
+output: html_document
+date: "2026-11-02"
+---
+
+```{r, set-chunk-opts}
+#| echo = FALSE
+library(knitr)
+opts_chunk$set(
+echo = FALSE, warning = FALSE, message = FALSE
+)
+```
+
+# Introduction
+
+The chosen data set is entitled “MARS Rover Environmental Monitoring Station” and was obtained through Kaggle. The variables include the month on Mars, maximum and minimum ground temperatures, maximum and minimum air temperatures, mean air pressure, and UV radiation. The objectives of this report are to identify relationships between climate variables and assess trends in these conditions over time.
+
+``` {r, here-i-am}
+here::i_am("Final_Project2.Rmd")
+```
+
+``` {r, load}
+data <- read.csv(
+  file = here::here("data/REMS_Mars_Dataset.csv"))
+tableone_final <- readRDS(file = here::here("output/tableone_final.RDS"))
+figure_final <- readRDS(file = here::here("output/figure_final.RDS"))
+```
+
+# Table 1
+
+``` {r, table}
+tableone <- readRDS(here::here("output/tableone_final.RDS"))
+tableone
+```
+
+The table indicates that weather conditions across Mars do vary by month. For instance, average pressure is low between months 5 and 7. Meanwhile, temperatures across all categories seem to reach their lowest points in months 3 and 4 and their peaks between months 7 and 10. This indicates that there are some seasonal patterns impacting climate on Mars.
+
+
+# Figure
+
+``` {r, figure}
+figure <- readRDS(here::here("output/figure_final.RDS"))
+figure
+```
+
+The scatterplot reveals that there is a moderate positive relationship between minimum ground temperature and minimum air temperature. Additionally, there is clustering in this association by UV radiation. The association is most consistent in instances of extremes of UV radiation (low and very high), but it is weaker with moderate and high radiation. 
