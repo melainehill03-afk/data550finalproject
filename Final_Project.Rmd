@@ -18,7 +18,7 @@ echo = FALSE, warning = FALSE, message = FALSE
 The chosen data set is entitled “MARS Rover Environmental Monitoring Station” and was obtained through Kaggle. The variables include the month on Mars, maximum and minimum ground temperatures, maximum and minimum air temperatures, mean air pressure, and UV radiation. The objectives of this report are to identify relationships between climate variables and assess trends in these conditions over time.
 
 ``` {r, here-i-am}
-here::i_am("Final_Project2.Rmd")
+here::i_am("Final_Project.Rmd")
 ```
 
 ``` {r, load}
