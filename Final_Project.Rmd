@@ -22,8 +22,6 @@ here::i_am("Final_Project.Rmd")
 ```
 
 ``` {r, load}
-data <- read.csv(
-  file = here::here("data/REMS_Mars_Dataset.csv"))
 tableone_final <- readRDS(file = here::here("output/tableone_final.RDS"))
 figure_final <- readRDS(file = here::here("output/figure_final.RDS"))
 ```

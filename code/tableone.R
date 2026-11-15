@@ -1,8 +1,13 @@
+library(tidyverse)
+library(here)
+
 here::i_am("code/tableone.R")
 
 library(labelled)
 
-var_label(data_num) <- list(
+cleaned_data <- readRDS(here("data", "cleaned_data.RDS"))
+
+var_label(cleaned_data) <- list(
   max_ground_temp..C. = "Max Ground Temperature (C)",
   min_ground_temp..C. = "Min Ground Temperature (C)",
   max_air_temp..C. = "Max Air Temperature (C)",
@@ -12,7 +17,7 @@ var_label(data_num) <- list(
 
 library(gtsummary)
 
-tableone <- data_num |>
+tableone <- cleaned_data |>
   select("max_ground_temp..C.", "min_ground_temp..C.", "max_air_temp..C.", "min_air_temp..C.", "mean_pressure.Pa.", "month") |>
   tbl_summary(by = month,
               missing = "no",

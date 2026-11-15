@@ -1,6 +1,11 @@
+library(tidyverse)
+library(here)
+
 here::i_am("code/data_cleaning.R")
 
-library(tidyverse)
+library(dplyr)
+
+data <- read.csv("data/REMS_Mars_Dataset.csv")
 
 # Extract the month from the date-time string
 data <- data %>%
