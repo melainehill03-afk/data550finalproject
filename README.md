@@ -10,3 +10,15 @@ This project analyzes information from the Rover Environmental Monitoring Statio
 * `code/tableone.R` - builds table 1 and stores in output folder as rds file
 * `code/figure.R` - builds figure of temperatures and UV radiation and stores in output folder as rds file
 * `code/render_report.R` - generates Final_Project.html
+
+## R Packages
+
+This project utilizes renv to track and manage R package dependencies. To synchronize your project repository, use the following steps:
+
+1. In the R console: run 'source("renv/activate.R")'
+2. Run 'renv::restore()' to install all packages recorded in the lockfile
+
+OR use this shortcut using the Makefile:
+
+1. Run 'make install' in the terminal
+2. Verify that this worked properly by running 'renv::status()' in the console

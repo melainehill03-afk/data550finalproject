@@ -9,3 +9,7 @@ output/figureone_final.RDS: data/cleaned_data.RDS code/figure.R code/data_cleani
 	
 data/cleaned_data.RDS: data/REMS_Mars_Dataset.csv code/data_cleaning.R
 	Rscript code/data_cleaning.R
+	
+.PHONY: install
+install:
+	Rscript -e "renv::restore(prompt = FALSE)"
